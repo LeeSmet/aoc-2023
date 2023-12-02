@@ -30,7 +30,7 @@ fn main() {
         .lines()
         .map(|mut line| {
             let mut vals = vec![];
-            while line.len() > 0 {
+            while !line.is_empty() {
                 for (word, value) in DIGITS {
                     if line.strip_prefix(word).is_some() {
                         vals.push(value);

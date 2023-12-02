@@ -42,7 +42,7 @@ fn parse_line(line: &str) -> Game {
     let line = line.strip_prefix("Game ").unwrap();
     let (_, line) = line.split_once(':').unwrap();
     let mut draws = vec![];
-    for d in line.split(";") {
+    for d in line.split(';') {
         // draw format is {num} {color}
         let mut tokens = d.split_whitespace();
         let mut draw = Draw {
