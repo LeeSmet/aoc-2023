@@ -37,6 +37,7 @@ impl Card {
         }
     }
 }
+
 fn main() {
     let score: u32 = INPUT_FILE
         .lines()
