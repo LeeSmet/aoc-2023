@@ -11,7 +11,6 @@ fn main() {
         .strip_prefix("seeds: ")
         .unwrap()
         .split(' ')
-        .into_iter()
         .map(|d| d.parse().unwrap())
         .collect();
 
