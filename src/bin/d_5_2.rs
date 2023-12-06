@@ -87,7 +87,7 @@ fn main() {
 
     let closest = seeds
         .iter()
-        .map(|range| {
+        .flat_map(|range| {
             let mut ranges = vec![range.clone()];
             for mapping in &mappings {
                 let mut new_ranges = vec![];
@@ -98,7 +98,6 @@ fn main() {
             }
             ranges
         })
-        .flatten()
         .map(|r| r.start)
         .min()
         .unwrap();
