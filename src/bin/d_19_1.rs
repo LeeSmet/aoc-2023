@@ -21,7 +21,7 @@ fn main() {
     println!("Sum of accepted part ratings: {accepted_parts_sum}");
 }
 
-fn part_accepted<'a>(wf: &HashMap<String, Workflow<'a>>, part: &Part) -> bool {
+fn part_accepted(wf: &HashMap<String, Workflow<'_>>, part: &Part) -> bool {
     let mut wf_name = "in";
     loop {
         let workflow = wf.get(wf_name).unwrap();
@@ -42,7 +42,7 @@ struct Workflow<'a> {
 
 impl<'a> Workflow<'a> {
     fn from_line(line: &'a str) -> Self {
-        let (name, rules) = line[..line.len() - 1].split_once("{").unwrap();
+        let (name, rules) = line[..line.len() - 1].split_once('{').unwrap();
         let rule_desc = rules.split(',').collect::<Vec<_>>();
         let rules = rule_desc[..rule_desc.len() - 1]
             .iter()
