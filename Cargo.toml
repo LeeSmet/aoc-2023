@@ -197,5 +197,9 @@ path = "src/bin/d_24_1.rs"
 name = "day_24_2"
 path = "src/bin/d_24_2.rs"
 
+[[bin]]
+name = "day_25_1"
+path = "src/bin/d_25_1.rs"
+
 [dependencies]
 nalgebra = "0.32.3"
